@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue practise 3</title>
+    <script src="https://unpkg.com/vue@3.0.2"></script>
+    <style>
+        .box{
+            padding: 100px 0;
+            width: 400px;
+            text-align: center;
+            background: rgb(166, 146, 255);
+            margin: 20px;
+            display: inline-block;
+        }
+
+        img{
+            width: 100px;
+            height: 100px;
+        }
+
+        body{
+            background: #eee;
+            max-width: 960px;
+            margin: 20px auto;
+        }
+        p, h3, ul{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style-type: none;
+            background: #fff;
+            margin: 20px auto;
+            padding: 10px 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        li.fav{
+            background: #ff9ed2;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Hi Vue!</h1>
+    <div id="app">
+        <!-- ATRIBUTE BINDING v-bind: becomes : , as a v-on becomes @-->
+        <a :href="url" target="_blank">best website ever</a>
+
+        <!-- CONDITIONAL RENDERING -->
+        <div v-if="showBooks">
+            <ul>
+                <!-- OUTPUTTING LISTS V-FOR -->
+                <li v-for="book in books" :class="{ fav: book.isFav }" @click="toggleFav(book)">
+                    <h3>{{book.author}}</h3>
+                    <p>{{book.title}}</p>
+                    <img :src="book.img" :alt="book.title">
+                </li>
+            </ul>
+
+            <ul>
+                <!-- OUTPUTTING LISTS V-FOR -->
+                <li v-for="book in filteredBooks" :class="{ fav: book.isFav }">
+                    <h3>{{book.author}}</h3>
+                    <p>{{book.title}}</p>
+                    <img :src="book.img" :alt="book.title">
+                </li>
+            </ul>
+
+            <p>{{ books[0].title }} - {{ books[0].author }}</p>
+        </div>
+
+        <button @click="toggleShowBooks">
+            <span v-if="showBooks">Hide Books</span>
+            <!-- <span v-if="!showBooks">Show Books</span> -->
+            <span v-else>Show Books</span>
+        </button>
+
+        <br>
+        <!-- mouse events -->
+        <div class="box" @mouseover="handleEvent($event, 5)">mouseover (enter)</div>
+        <div class="box" @mouseleave="handleEvent">mouseleave</div>
+        <div class="box" @dblclick="handleEvent">doubleclick</div>
+        <div class="box" @mousemove="handleMousemove">{{x}} - {{y}}</div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue practise 2</title>
+    <script src="https://unpkg.com/vue@3.0.2"></script>
+</head>
+
+<body>
+    <h1>Hi Vue!</h1>
+    <div id="app">
+        <!-- DATA END TEMPLATES -->
+        <h2>I am the template (from html)</h2>
+        <p>The fianl empire (from html)</p>
+        <p>{{ title }} - {{ author }} - {{ age }}</p>
+
+        <!-- CLICK EVENTS -->
+        <button v-on:click="age++">Increase age</button>
+        <button v-on:click="age--">Decrease age</button>
+        <!-- v-on:click is the same that @click -->
+        <div @click="title='smth else'">Change book title</div>
+        <div @click="changeTitle('Find me')">Change book title from js method</div>
+    </div>
+
+    {{ title }}
+
+    <div id="app1">
+        <!-- CONDITIONAL RENDERING -->
+        <div v-if="showBooks">
+            <p>{{ title }} - {{ author }} - {{ age }}</p>
+        </div>
+
+        <button @click="toggleShowBooks">
+            <span v-if="showBooks">Hide Books</span>
+            <!-- <span v-if="!showBooks">Show Books</span> -->
+            <span v-else>Show Books</span>
+        </button>
+
+        <div v-show="showBooks">Currently showing books</div>
+
+        <!-- v-show doesnt remove element from html , but v-if actually do this , 
+            removing elements and than adding is more expensive operation for browser -->
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

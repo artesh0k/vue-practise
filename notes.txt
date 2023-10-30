@@ -14,46 +14,77 @@ MOUSE EVENTS:
     <div class="box" @mousemove="handleMousemove">{{x}} - {{y}}</div>
 
 PROPS:
-___
-In Vue.js, "props" is short for "properties" and it's a way to pass data from a parent component to a child component.
-Props allow you to send data from a higher-level component to a lower-level component,
-making it a fundamental mechanism for component communication in Vue.js.
+    ___
+    In Vue.js, "props" is short for "properties" and it's a way to pass data from a parent component to a child component.
+    Props allow you to send data from a higher-level component to a lower-level component,
+    making it a fundamental mechanism for component communication in Vue.js.
 
-Here's how it works:
-Parent Component (Sender): The component that wants to pass data to another component is called the parent component.
-Child Component (Receiver): The component that receives the data via props is called the child component.
-___
+    Here's how it works:
+    Parent Component (Sender): The component that wants to pass data to another component is called the parent component.
+    Child Component (Receiver): The component that receives the data via props is called the child component.
+    ___
 
-CHILD COMPONENT
-methods: { 
+DATA FROM CHILD TO PARENT COMPONENT:
+    CHILD COMPONENT
+    methods: { 
         stopTimer() {
             this.$emit('end',this.reactionTime) GIVE ARGUMENT TO PARENT ARGUMENT
         }
     }
 
-PARENT COMPONENT
-<Block v-if="isPlaying" :delay="delay" @end="endGame"></Block>
+    PARENT COMPONENT
+    <Block v-if="isPlaying" :delay="delay" @end="endGame"></Block>
 
-methods: {
-    endGame(reactionTime) { RECIIVE ARGUMENT FROM @end="endGame"
-      this.score = reactionTime
+    methods: {
+        endGame(reactionTime) { RECIIVE ARGUMENT FROM @end="endGame"
+            this.score = reactionTime
+        }
     }
-}
 
+V-MODEL: *to binding data 
+    <input type="email" required v-model="email">
+    <select v-model="role">
+        <option value="developer">Web Developer</option>
+        <option value="designer">Web Designer</option>
+    </select>
+
+    <script>
+        export default {
+            data() {
+                return {
+                    email: '',
+                    role: 'designer' !!! DEFAULT
+                }
+            }
+        }
+    </script>
 
 _________________________________________________________________________
 6. lesson
-creating web applictaion with vue
+creating web applictaion with vue (reaction timer)
 
-our purposes:
+Our purposes:
 1. Click the buuton to start a new game.
     1.1. Check if the game has started already (boolean condition).
     1.2. Start a timer for a random amount of time.
 2. Show the time, which user spend befor click on the green square (smth like *what the time user have spent watching the add in iur app?*)
-3. 
 
 components: 
         ___App.vue___
         |           |
     Block.vue   Results.vue
+_________________________________________________________________________
+
+_________________________________________________________________________
+7. lesson
+creating web applictaion with vue (web form)
+
+Our purposes:
+1. Creating a form with which client can send the data
+components: 
+        ___App.vue
+        |          
+    SignUoForm.vue   
+
+<form @submit.prevent="handleSubmit">
 _________________________________________________________________________

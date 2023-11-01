@@ -1,4 +1,5 @@
 <template>
+<div>
   <p>welcome</p>
   <h1>{{title}}</h1>
   <br>
@@ -27,6 +28,7 @@
   <br>
   <button @click.alt="toggleModal">show modal 1 (alt)</button>
   <button @click="toggleModalTwo">show modal 2</button>
+</div>
 </template>
 
 <script>

@@ -1,4 +1,6 @@
 
+<!-- eslint-disable vue/no-multiple-template-root -->
+
 FUNCTIONS:
 1. v-if:
 2. @click
@@ -87,4 +89,17 @@ components:
     SignUoForm.vue   
 
 <form @submit.prevent="handleSubmit">
+_________________________________________________________________________
+
+_________________________________________________________________________
+8. lesson
+creating web applictaion with vue (router links)
+
+REDIRECT
+const routes = [
+  { // redirect
+    path: '/all-jobs',
+    redirect: '/jobs'
+  }
+]
 _________________________________________________________________________

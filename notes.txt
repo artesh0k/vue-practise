@@ -92,7 +92,7 @@ components:
 _________________________________________________________________________
 
 _________________________________________________________________________
-8. lesson
+8.-9. lessons
 creating web applictaion with vue (router links)
 
 REDIRECT
@@ -102,4 +102,120 @@ const routes = [
     redirect: '/jobs'
   }
 ]
+
+Fetching Data 
+    -JSON Server-
+    install json with : 
+            npm install json-server 
+        or global
+            npm install -g json-server
+    npx json-server --watch data/db.json
+
+    1. create a json file with data
+    2. replace data about jobs with fetch function (javascript)
+
+    <script>
+    export default {
+        data() {
+            return {
+                jobs: []
+            }
+        },
+        mounted() {
+            fetch("http://localhost:3000/jobs")             REQUEST TO SERVER
+                .then(res => res.json())                    GETTING DATA AS JSON OBJECT
+                .then(data => this.jobs = data)             ASSIGN DATA TO JOBS
+                .catch(err => console.log(err))             IF ERROR HAPPENS CATCH IT
+        }
+    }
+    </script>
+
+
+
+    CONDITIONALLY SHOWWING DATA
+<template>
+    <!-- eslint-disable vue/no-multiple-template-root -->
+    <h1>Job Details Page</h1>
+    <p>The job's id is: {{ id }}</p>
+    <div v-if="jobDetails">
+    <p>Title: {{ jobDetails.title }}</p>
+    <p>Id: {{ jobDetails.id }}</p>
+    <p>Description: {{ jobDetails.description }}</p>
+    </div>
+</template>
+
+<script>
+export default {
+    // props can be gotten from jobs route links
+
+    props: ['id'],
+    data() {
+        return {
+            jobDetails: null
+        }
+    },
+    // data() {
+    //     return {
+    //         id: this.$route.params.id
+    //     }
+    // }
+    mounted() {
+        fetch("http://localhost:3000/jobs/" + this.id)
+            .then(res => res.json())
+            .then(data => this.jobDetails = data)
+            .catch(err => console.log(err))
+    }
+}
+</script>
+
 _________________________________________________________________________
+
+
+10. lesson
+
+REF
+    -are reactive
+    -IS needed to use name.value.atribute
+    -CAN use premetive values (ref('hi'))
+
+REACTIVE
+    -are also reactive
+    -ISNT neede to use .value
+    -CANT use premetive values(reactive('hi')), only (reactive({name:'hi', surname:'hello' }))
+
+<template>
+  <div class="home">
+      <h1>Home</h1>
+      <p ref="p">My name is {{ name }}, i'm {{ age }} years old</p>
+      <button @click="handleClick">click me</button>
+  </div>
+</template>
+
+<script>
+import { ref } from 'vue'
+
+export default {
+  name: 'HomeView',
+  setup() {
+    console.log('setup')
+
+    const p = ref(null)
+
+    const name = ref('valerii')
+    const age = ref(19)
+
+    const handleClick = () => {
+      console.log(p, p.value)
+      p.value.classList.add('test')
+      p.value.textContent = 'hello, ninjas'
+    }
+
+    return {name, age, handleClick, p}
+  }
+}
+</script>
+
+
+
+COMPUTED VALUES
+    

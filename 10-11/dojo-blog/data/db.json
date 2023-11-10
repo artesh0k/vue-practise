@@ -1,0 +1,24 @@
+{
+    "posts": [ 
+        {
+        "id": 1,
+        "title": "welcome to the blog from oslo",
+        "body": "Justo nec ultrices dui sapien eget mi proin sed libero. Proin nibh nisl condimentum id venenatis. Parturient montes nascetur ridiculus mus mauris. Ornare arcu odio ut sem nulla pharetra diam. Sit amet porttitor eget dolor morbi non arcu. Id ornare arcu odio ut sem nulla pharetra diam sit. Vitae proin sagittis nisl rhoncus mattis rhoncus urna. Ipsum consequat nisl vel pretium lectus. Morbi tristique senectus et netus et malesuada fames. Ultrices eros in cursus turpis massa. Praesent semper feugiat nibh sed pulvinar proin gravida. Aliquam etiam erat velit scelerisque. Scelerisque in dictum non consectetur a erat nam at lectus. Nunc id cursus metus aliquam eleifend mi in nulla posuere. Malesuada proin libero nunc consequat interdum varius sit amet mattis.",
+        "tags": [
+            "blog",
+            "webdev",
+            "development"
+            ]
+        },
+        {
+        "id": 2,
+        "title": "5 tips for development with API",
+        "body": "Justo nec ultrices dui sapien eget mi proin sed libero. Proin nibh nisl condimentum id venenatis. Parturient montes nascetur ridiculus mus mauris. Ornare arcu odio ut sem nulla pharetra diam. Sit amet porttitor eget dolor morbi non arcu. Id ornare arcu odio ut sem nulla pharetra diam sit. Vitae proin sagittis nisl rhoncus mattis rhoncus urna. Ipsum consequat nisl vel pretium lectus. Morbi tristique senectus et netus et malesuada fames. Ultrices eros in cursus turpis massa. Praesent semper feugiat nibh sed pulvinar proin gravida. Aliquam etiam erat velit scelerisque. Scelerisque in dictum non consectetur a erat nam at lectus. Nunc id cursus metus aliquam eleifend mi in nulla posuere. Malesuada proin libero nunc consequat interdum varius sit amet mattis.",
+        "tags": [
+            "fetching data",
+            "API",
+            "development"
+            ]
+        }
+    ]
+}

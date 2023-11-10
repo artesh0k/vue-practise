@@ -4,7 +4,7 @@
 FUNCTIONS:
 1. v-if:
 2. @click
-3. :*tag's argument*='name'
+3. :*tag's argument*='name' - PROP
 4. v-for="book in books" :class="{ fav: book.isFav }"
 5. <p>reaction time is : {{ score }}</p> argument score from data
 
@@ -24,6 +24,7 @@ PROPS:
     Here's how it works:
     Parent Component (Sender): The component that wants to pass data to another component is called the parent component.
     Child Component (Receiver): The component that receives the data via props is called the child component.
+    <PostList :posts="posts"/>
     ___
 
 DATA FROM CHILD TO PARENT COMPONENT:
@@ -216,6 +217,12 @@ export default {
 </script>
 
 
+11. lesson
+creating end point with json-server
+1. install 
+$ npm install json-server
 
-COMPUTED VALUES
-    
+2. create end-point
+$ json-server --watch data/JSONFILE
+
+(For security problems : $ Set-ExecutionPolicy RemoteSigned -Scope Process)
